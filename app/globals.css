@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#__next {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Highlight.js styles for code blocks */
+@import 'highlight.js/styles/github.css';
+
+/* Override some prose styles for better chat appearance */
+.prose {
+  max-width: none;
+}
+
+.prose pre {
+  background-color: #f6f8fa;
+  border: 1px solid #e1e8ed;
+}
+
+.prose code {
+  background-color: #f6f8fa;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.prose blockquote {
+  font-style: italic;
+  border-left: 4px solid #e1e8ed;
+  padding-left: 1rem;
+  margin: 1rem 0;
+}
+
+.prose table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.prose th,
+.prose td {
+  border: 1px solid #e1e8ed;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.prose th {
+  background-color: #f6f8fa;
+  font-weight: 600;
+}
