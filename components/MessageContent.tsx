@@ -27,16 +27,23 @@ export default function MessageContent({ content, role }: MessageContentProps) {
               className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 overflow-x-auto text-sm"
             />
           ),
-          code: ({ node, inline, ...props }) => (
-            <code
-              {...props}
-              className={
-                inline
-                  ? 'bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm'
-                  : 'block'
-              }
-            />
-          ),
+          code: ({ node, className, children, ...props }: any) => {
+            const match = /language-(\w+)/.exec(className || '')
+            const inline = !match
+            
+            return (
+              <code
+                className={
+                  inline
+                    ? 'bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm'
+                    : 'block'
+                }
+                {...props}
+              >
+                {children}
+              </code>
+            )
+          },
           blockquote: ({ node, ...props }) => (
             <blockquote
               {...props}
